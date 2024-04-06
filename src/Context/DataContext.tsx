@@ -2,7 +2,7 @@ import React from 'react';
 import useFetch from '../Hooks/useFetch';
 
 type IDataContext = {
-  data: IVenda[] | null;
+  data: ISale[] | null;
   loading: boolean;
   error: string | null;
   startDate: string;
@@ -11,10 +11,10 @@ type IDataContext = {
   setEndDate: React.Dispatch<React.SetStateAction<string>>;
 };
 
-type IVenda = {
+type ISale = {
   id: string;
   nome: string;
-  preco: string;
+  preco: number;
   status: 'pago' | 'processando' | 'falha';
   pagamento: 'boleto' | 'pix' | 'cartao';
   data: string;
@@ -42,7 +42,7 @@ export const DataContextProvider = ({ children }: React.PropsWithChildren) => {
   const [startDate, setStartDate] = React.useState(getDateAnyDaysAgo(30));
   const [endDate, setEndDate] = React.useState(getDateAnyDaysAgo(0));
 
-  const { data, error, loading } = useFetch<IVenda[]>(
+  const { data, error, loading } = useFetch<ISale[]>(
     `https://data.origamid.dev/vendas/?inicio=${startDate}&final=${endDate}`,
   );
 
