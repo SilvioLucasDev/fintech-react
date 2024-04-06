@@ -1,5 +1,5 @@
 import DateRange from './DateRange';
-import Months from './Months';
+import Month from './Month';
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <div className="mb">
         <DateRange />
       </div>
-      <Months />
+      <Month />
     </header>
   );
 };

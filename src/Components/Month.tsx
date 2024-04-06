@@ -1,6 +1,6 @@
 import MonthButton from './MonthButton';
 
-const Months = () => {
+const Month = () => {
   return (
     <div className="flex">
       <MonthButton month={-3} />
@@ -11,4 +11,4 @@ const Months = () => {
   );
 };
 
-export default Months;
+export default Month;
