@@ -1,17 +1,20 @@
 import Header from './Components/Header';
 import Sidenav from './Components/Sidenav';
+import { DataContextProvider } from './Context/DataContext';
 import Resumo from './Pages/Resumo';
 import './Style.css';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <main>
+    <DataContextProvider>
+      <div className="container">
         <Sidenav />
-        <Resumo />
-      </main>
-    </div>
+        <main>
+          <Header />
+          <Resumo />
+        </main>
+      </div>
+    </DataContextProvider>
   );
 }
 
